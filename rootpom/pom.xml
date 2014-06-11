@@ -27,7 +27,7 @@
   <artifactId>mc-root-pom</artifactId>
 
   <!-- Versions here is just a single incremental number no '.' -->
-  <version>1</version>
+  <version>3</version>
   <packaging>pom</packaging>
   <name>MaritimeCloud Root Pom</name>
   <description>The root pom for all maven projects under maritimecloud.net</description>
@@ -70,6 +70,14 @@
   </prerequisites>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav-jackrabbit</artifactId>
+        <!-- Upgraded to 2.2 from 1.0.6 beta by KJR -->
+        <version>2.2</version>
+      </extension>
+    </extensions>
     <plugins>
 
       <plugin>
@@ -77,8 +85,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
           <encoding>UTF-8</encoding>
           <optimize>false</optimize>
           <debug>true</debug>
@@ -93,7 +101,11 @@
         <!-- <configuration> <parallel>methods</parallel> <threadCount>8</threadCount> </configuration>
           -->
       </plugin>
-
+            <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
