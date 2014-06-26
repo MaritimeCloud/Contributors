@@ -1,5 +1,5 @@
-dma-developers
-==============
+MaritimeCloud Contributors
+==========================
 This repositories contains various development tools. Useful when working with any of the dma-dk repositories.
 
 Scripts
