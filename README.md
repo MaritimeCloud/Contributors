@@ -5,13 +5,33 @@ This repositories contains various development tools. Useful when working with a
 Scripts
 ========================
 The script folder contains various small shell scripts to
+
+Update License headers
+======================
+Script to update headers in a project. You might need to update the path to the shell script.
+> find . -name "*.java" -exec ../Contributors/scripts/update_headers.sh {} \; 
+
+
+Remove Tabs
+======================
+Script to replace tabs in a project. You might need to update the path to the shell script.
+> find . -name "*.java" -exec ../Contributors/scripts/remove_tabs.sh {} \; 
+
+
 + Replace license headers in files
 + Replace tabs in files
 
 Rootpom
 =========================
-The rootpom folder contains the pom that all dma-dk projects inherit.
+The rootpom folder contains the pom that all Maritime Cloud projects inherit from.
 Whenever updates are made to it. The version is incremented by 1.
+
+./mc.sh release-root-pom
+
+Releasing
+=========================
+
+
 And a new version of the pom is uploaded to cloudbees (for use by other developers) by invoking
 
     mvn deploy

@@ -14,25 +14,26 @@
    See the License for the specific language governing permissions and 
    limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
   http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
     <version>7</version>
-  </parent>  
+  </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.maritimecloud</groupId>
   <artifactId>mc-root-pom</artifactId>
-
+  
   <!-- Versions here is just a single incremental number no '.' -->
-  <version>4</version>
+  <version>6</version>
   <packaging>pom</packaging>
   <name>MaritimeCloud Root Pom</name>
   <description>The root pom for all maven projects under maritimecloud.net</description>
   <url>https://github.com/MaritimeCloud</url>
-
+  
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -40,19 +41,19 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
+  
   <organization>
     <name>Danish Maritime Authority</name>
     <url>http://http://www.dma.dk/</url>
   </organization>
-
+  
   <inceptionYear>2012</inceptionYear>
-
+  
   <ciManagement>
     <system>Jenkins</system>
     <url>https://dma.ci.cloudbees.com/</url>
   </ciManagement>
-
+  
   <mailingLists>
     <mailingList>
       <name>MaritimeCloud group</name>
@@ -60,24 +61,22 @@
       <archive>http://groups.google.com/group/maritimecloud</archive>
     </mailingList>
   </mailingLists>
-
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <dependencies.guava.version>17.0</dependencies.guava.version>
     <dependencies.slf4j.version>1.7.7</dependencies.slf4j.version>
-    
-    <dependencies.cake.version>0.8-SNAPSHOT</dependencies.cake.version>
-    <dependencies.jetty.version>9.2.0.v20140526</dependencies.jetty.version>
+    <dependencies.jetty.version>9.2.1.v20140609</dependencies.jetty.version>
     <dependencies.servlet.version>3.1.0</dependencies.servlet.version>
     <dependencies.jersey.version>2.9.1</dependencies.jersey.version>
   </properties>
   
-
+  
   <prerequisites>
     <maven>3.0.4</maven>
   </prerequisites>
-
-    <dependencies>
+  
+  <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -91,12 +90,11 @@
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-webdav-jackrabbit</artifactId>
-        <!-- Upgraded to 2.2 from 1.0.6 beta by KJR -->
         <version>2.2</version>
       </extension>
     </extensions>
     <plugins>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -110,7 +108,7 @@
           <showDeprecation>true</showDeprecation>
         </configuration>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -118,7 +116,7 @@
         <!-- <configuration> <parallel>methods</parallel> <threadCount>8</threadCount> </configuration>
           -->
       </plugin>
-            <plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>2.3</version>
@@ -128,43 +126,43 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <version>1.3.1</version>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
         <version>2.5</version>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-install-plugin</artifactId>
         <version>2.5.1</version>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.3</version>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.8.1</version>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
         <version>2.2.1</version>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.4</version>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -187,53 +185,45 @@
           <testSourceDirectory>src/test/java</testSourceDirectory>
         </configuration>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9.1</version>
         <configuration>
-          <excludePackageNames>
-            *.internal.*:*.deprecated.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:
-          </excludePackageNames>
+          <excludePackageNames>*.internal.*:*.deprecated.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:</excludePackageNames>
           <aggregate>true</aggregate>
-          <links>
-            <link>http://download.oracle.com/javase/7/docs/api/</link>
-          </links>
           <showPackage>false</showPackage>
           <showProtected>true</showProtected>
+          <additionalparam>-link http://docs.oracle.com/javase/8/docs/api/</additionalparam>
         </configuration>
       </plugin>
-
+      
       <plugin>
         <groupId>com.googlecode.maven-overview-plugin</groupId>
         <artifactId>maven-overview-plugin</artifactId>
         <version>1.6</version>
       </plugin>
-
+      
     </plugins>
   </build>
-
+  
   <reporting>
     <plugins>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9.1</version>
         <configuration>
-          <excludePackageNames>
-						*.internal.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:*.testcases.*:
-          </excludePackageNames>
+          <excludePackageNames>*.internal.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:*.testcases.*:</excludePackageNames>
           <aggregate>true</aggregate>
-          <links>
-            <link>http://download.oracle.com/javase/7/docs/api/</link>
-          </links>
           <showPackage>false</showPackage>
           <showProtected>true</showProtected>
+          <additionalparam>-link http://docs.oracle.com/javase/8/docs/api/</additionalparam>
         </configuration>
       </plugin>
-
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -242,7 +232,7 @@
           <configLocation>mc-build-tool/checkstyle.xml</configLocation>
           <suppressionsLocation>mc-build-tool/checkstyle-suppressions.xml</suppressionsLocation>
           <headerLocation>mc-build-tool/LICENSE.txt</headerLocation>
-
+          
           <failsOnError>true</failsOnError>
           <enableRulesSummary>true</enableRulesSummary>
           <consoleOutput>true</consoleOutput>
@@ -250,13 +240,13 @@
           <testSourceDirectory>src/test/java</testSourceDirectory>
         </configuration>
       </plugin>
-
+      
     </plugins>
   </reporting>
-
-
+  
+  
   <profiles>
-
+    
     <profile>
       <id>release-sign-artifacts</id>
       <activation>
@@ -284,6 +274,6 @@
         </plugins>
       </build>
     </profile>
-
+    
   </profiles>
 </project>
