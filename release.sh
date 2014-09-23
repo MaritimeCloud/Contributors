@@ -2,8 +2,11 @@
 #Any command that fails will exit the script
 set -e
  
-declare -a arr=("../MaritimeCloud" "../MaritimeCloudMMS")
-cd ..
+#declare -a arr=("../MaritimeCloud" "../MaritimeCloudMMS")
+
+declare -a arr=("../MaritimeCloud_V0_2" "../MaritimeCloudMMS_V0_2")
+
+##cd ..
 ## now loop through the above array
 for i in "${arr[@]}"
 do

@@ -20,9 +20,6 @@ The script folder contains various small shell scripts to
 + Replace license headers in files
 + Replace tabs in files
 
-
-
-
 Scripts
 ========================
 The script folder contains various small shell scripts to
@@ -48,31 +45,6 @@ The rootpom folder contains the pom that all Maritime Cloud projects inherit fro
 Whenever updates are made to it. The version is incremented by 1.
 
 ./mc.sh release-root-pom
-
-Releasing
-=========================
-
-
-And a new version of the pom is uploaded to cloudbees (for use by other developers) by invoking
-
-    mvn deploy
-
-Use must have `~/.m2/settings.xml` file with your cloudbees username and password before you can use it
-
-    <settings>
-        <servers>
-            <server>
-                <id>dma-release-repository</id>
-                <username>YOUR_USERNAME</username>
-                <password>YOUR_PASSWORD</password>
-            </server>
-            <server>
-                <id>dma-snapshot-repository</id>
-                <username>YOUR_USERNAME</username>
-                <password>YOUR_PASSWORD</password>
-            </server>
-        </servers>
-    </settings>        
 
 Coding conventions
 ===============================
