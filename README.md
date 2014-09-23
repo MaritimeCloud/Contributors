@@ -1,6 +1,27 @@
-dma-developers
-==============
+MaritimeCloud Contributors
+==========================
 This repositories contains various development tools. Useful when working with any of the dma-dk repositories.
+
+Github source code organization
+========================
+https://github.com/MaritimeCloud is split into the following repositories
+
+MaritimeCloud         :
+MaritimeCloudMMS      : Contains the implementation of the Maritime Messaging Service
+MaritimeCloudMSDL     : 
+MaritimeCloudServices :
+MaritimeCloudStore    :
+
+
+GettingStarted        : 
+Developers            : This repository
+
+The script folder contains various small shell scripts to
++ Replace license headers in files
++ Replace tabs in files
+
+
+
 
 Scripts
 ========================
