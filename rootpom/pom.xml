@@ -28,7 +28,7 @@
   <artifactId>mc-root-pom</artifactId>
   
   <!-- Versions here is just a single incremental number no '.' -->
-  <version>6</version>
+  <version>8</version>
   <packaging>pom</packaging>
   <name>MaritimeCloud Root Pom</name>
   <description>The root pom for all maven projects under maritimecloud.net</description>
@@ -64,11 +64,11 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <dependencies.guava.version>17.0</dependencies.guava.version>
+    <dependencies.guava.version>18.0</dependencies.guava.version>
     <dependencies.slf4j.version>1.7.7</dependencies.slf4j.version>
-    <dependencies.jetty.version>9.2.1.v20140609</dependencies.jetty.version>
+    <dependencies.jetty.version>9.2.3.v20140905</dependencies.jetty.version>
     <dependencies.servlet.version>3.1.0</dependencies.servlet.version>
-    <dependencies.jersey.version>2.9.1</dependencies.jersey.version>
+    <dependencies.jersey.version>2.13</dependencies.jersey.version>
   </properties>
   
   
@@ -166,14 +166,26 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.11</version>
+        <version>2.13</version>
         <dependencies>
           <dependency>
             <groupId>net.maritimecloud.tools</groupId>
             <artifactId>mc-build-tool</artifactId>
             <version>1</version>
           </dependency>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>6.0</version>
+            <exclusions>
+              <exclusion>
+                <groupId>com.sun</groupId>
+                <artifactId>tools</artifactId>
+              </exclusion>
+           </exclusions>
+         </dependency>
         </dependencies>
+       
         <configuration>
           <configLocation>mc-build-tool/checkstyle.xml</configLocation>
           <suppressionsLocation>mc-build-tool/checkstyle-suppressions.xml</suppressionsLocation>
