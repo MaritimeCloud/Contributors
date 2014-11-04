@@ -1,4 +1,4 @@
-URL="http://eclipse.mirror.triple-it.nl/eclipse/downloads/drops4/R-4.4-201406061215/eclipse-platform-4.4-macosx-cocoa-x86_64.tar.gz"
+URL="http://eclipse.mirror.triple-it.nl/eclipse/downloads/drops4/R-4.4.1-201409250400/eclipse-platform-4.4.1-macosx-cocoa-x86_64.tar.gz"
 
 rm -fr eclipse
 curl -o eclipse.tar.gz $URL
