@@ -1,0 +1,119 @@
+== Introduction
+This contributor guide describes how you can contribute to the development of the Maritime Cloud reference implementation or the technical specifications.
+
+We envision this project to be a multi-country multi-company endeavour. So this guide establishes some procedures in such a way that everybody is on the same page.
+
+=== Open Source
+Open source is at the very core of the Maritime Cloud. So everything on located in our GitHub repositories are open source. Right down to the documentation and specification.
+
+All of our source code is licensed under the Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
+
+All of our documentation is licensed under the Creative Commons Attribution 4.0 International license (http://creativecommons.org/licenses/by/4.0/)
+
+=== Github
+All source code and documentation is located at https://github.com/MaritimeCloud/
+There might be a bit of a learning curve for using Github, but we believe that it is the
+best tool for supporting distributed developement.
+
+In order to be able to contribute to either the reference implementation or some of the documentation you need access to an account on Github. You also need access to a git client. Either a command line client or
+one of the GUIs available https://windows.github.com/ or https://mac.github.com/.
+
+Some starting references for git are https://windows.github.com/help.html and http://rogerdudler.github.io/git-guide/
+
+Initially you will be submitting changes as pull requests. Which members of the core team will integrate if they accept the changes. As a new contributer, this is mainly to ensure that the source code and documentation you produce is consistent with what we already have. At some point you can be added to the core team if you make regular additions.
+
+The following github repositories are available at https://github.com/MaritimeCloud/
+
+[cols="3,7", options="header"]
+|===
+|Name
+|Description
+
+|dev.maritimecloud.net
+|The website located at http://dev.maritimecloud.net.
+
+|MaritimeCloud
+|The basic Java based framework for the Maritime Cloud
+
+|Documentation
+|Where this guide and other documentation is located.
+
+|MaritimeCloudMMS
+|The implementation of the MMS protocol.
+
+|MaritimeCloudInfrastructure
+|Interal infrastructure used by the MMS protocol and the Service and Identity Registry.
+
+=== Documentation
+A number of different documents are hosted at our GitHub repository at https://github.com/MaritimeCloud/Documentation.
+
+* *Contributer Guide,* this guide you are reading right now.
+* *Developer Guide,* a guide for developers that want to start integrating with the reference implementation of the Maritime Cloud.
+* *Technical Specification,* the specification of the various commounication protocols, messages formats, and grammar for the Martime Service Definition Language. 
+
+This guide is located here:
+https://github.com/MaritimeCloud/Contributors
+
+
+
+All our documentation is written in AsciiDoc which is a human-readable document format, semantically equivalent to DocBook XM or LaTeX. Various tools exists to output the AsciiDoc files to PDF, HTML, EPUB3, DocBook.
+
+==== AsciiDoctor
+While AsciiDoctor is very easy to use. Setting is a little bit more consuming then we like.
+
+===== Windows Installation
+
+===== Linux Installation
+
+===== OSX Installation
+
+==== Editing 
+Images
+
+==== Generating the documentation
+
+==== Generating the website.
+
+=== Source Code
+
+
+Cake has beeb designed with some goals in mind:
+==== Java
+* *No mandatory dependencies. Always a single jar.*
+* *Small API. All internal classes are hidden. all code within net.maritimecloud.internal.*** packages are private and subject to change across every release
+* *Less is More. * Every class or interface added to the public API is increasing the complexity of the framework. That is why we strive very hard to keep the API as simple as possible. No classes or interfaces are added unless nessesary.
+
+
+==== Tools
+Maven
+
+===== Checkstyle
+Checkstyle is a development tool to help programmers write Java code that adheres to a coding standard. Currently all of our projects adheres to the standard we have set up.
+
+The configuration files of checkstyle is located in https://github.com/MaritimeCloud/Contributors/tree/master/mc-build-tool/src/main/resources/mc-build-tool and is being built into a single jar file. So can we reference it from other maven projects.
+
+Checkstyle can be run in 2 ways:
+====== CLI
+At the command line it can be invoked by calling "mvn checkstyle:check". It will fail if there are any violations in the project.
+
+
+
+
+===== Formatters
+Eclipse
+
+===== Travis
+
+
+But they will b
+
+==== Release process
+We aim to put our new releases roughly every 3 month. For the time being (as of late 2014) releases are neither forward nor backward compatible. This will change once the platform mature.
+
+We do not currently have anyhave currently not st
+
+=== Feedback
+Readers may send feedback about errors, omissions, and ambiguities in this guide to kasperni@gmail.com or even better submit a pull request to the documentation available at https://github.com/MaritimeCloud/Documentation/tree/master/developer-guide/adoc.
+
+As previously mentioned questions about usage of the Maritime Cloud should be directed to our Google Group at https://groups.google.com/forum/#!forum/maritimecloud
+

@@ -66,7 +66,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <dependencies.guava.version>18.0</dependencies.guava.version>
     <dependencies.slf4j.version>1.7.7</dependencies.slf4j.version>
-    <dependencies.jetty.version>9.2.3.v20140905</dependencies.jetty.version>
+    <dependencies.jetty.version>9.2.5.v20141112</dependencies.jetty.version>
     <dependencies.servlet.version>3.1.0</dependencies.servlet.version>
     <dependencies.jersey.version>2.13</dependencies.jersey.version>
   </properties>
@@ -203,11 +203,11 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9.1</version>
         <configuration>
-          <excludePackageNames>*.internal.*:*.deprecated.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:</excludePackageNames>
+<!--          <excludePackageNames>*.internal.*:*.deprecated.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:</excludePackageNames>-->
           <aggregate>true</aggregate>
           <showPackage>false</showPackage>
           <showProtected>true</showProtected>
-          <additionalparam>-link http://docs.oracle.com/javase/8/docs/api/</additionalparam>
+          <additionalparam>-link http://docs.oracle.com/javase/8/docs/api/ -Xdoclint:none</additionalparam>
         </configuration>
       </plugin>
       
@@ -228,11 +228,11 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9.1</version>
         <configuration>
-          <excludePackageNames>*.internal.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:*.testcases.*:</excludePackageNames>
+<!--          <excludePackageNames>*.internal.*:*.tck.*:*.test.*:*.jcip.*:*.examples.*:*.testcases.*:</excludePackageNames>-->
           <aggregate>true</aggregate>
           <showPackage>false</showPackage>
           <showProtected>true</showProtected>
-          <additionalparam>-link http://docs.oracle.com/javase/8/docs/api/</additionalparam>
+          <additionalparam>-link http://docs.oracle.com/javase/8/docs/api/ -Xdoclint:none</additionalparam>
         </configuration>
       </plugin>
       
