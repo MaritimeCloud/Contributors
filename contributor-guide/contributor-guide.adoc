@@ -4,7 +4,7 @@ This contributor guide describes how you can contribute to the development of th
 We envision this project to be a multi-country multi-company endeavour. So this guide establishes some procedures in such a way that everybody is on the same page.
 
 === Open Source
-Open source is at the very core of the Maritime Cloud. So everything on located in our GitHub repositories are open source. Right down to the documentation and specification.
+Open source is at the very core of the Maritime Cloud. So everything located in our GitHub repositories is open source. Right down to the documentation and technical specifications.
 
 All of our source code is licensed under the Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 
@@ -12,11 +12,9 @@ All of our documentation is licensed under the Creative Commons Attribution 4.0 
 
 === Github
 All source code and documentation is located at https://github.com/MaritimeCloud/
-There might be a bit of a learning curve for using Github, but we believe that it is the
-best tool for supporting distributed developement.
+There might be a bit of a learning curve for using Github, but we believe that it is the best tool for supporting distributed developement. It is also by far the largest code host in the world.
 
-In order to be able to contribute to either the reference implementation or some of the documentation you need access to an account on Github. You also need access to a git client. Either a command line client or
-one of the GUIs available https://windows.github.com/ or https://mac.github.com/.
+In order to be able to contribute to either the reference implementation or some of the documentation you need access to an account on Github. You also need access to a git client. Either a command line client or one of the GUIs available https://windows.github.com/ or https://mac.github.com/.
 
 Some starting references for git are https://windows.github.com/help.html and http://rogerdudler.github.io/git-guide/
 
@@ -54,8 +52,6 @@ A number of different documents are hosted at our GitHub repository at https://g
 This guide is located here:
 https://github.com/MaritimeCloud/Contributors
 
-
-
 All our documentation is written in AsciiDoc which is a human-readable document format, semantically equivalent to DocBook XM or LaTeX. Various tools exists to output the AsciiDoc files to PDF, HTML, EPUB3, DocBook.
 
 ==== AsciiDoctor
@@ -75,14 +71,16 @@ Images
 ==== Generating the website.
 
 === Source Code
+The implementation language of the reference implementation is Java
 
+Currently all of reference source code is
 
 Cake has beeb designed with some goals in mind:
-==== Java
-* *No mandatory dependencies. Always a single jar.*
+
+* *No mandatory dependencies. Should always be available as a single jar.*
 * *Small API. All internal classes are hidden. all code within net.maritimecloud.internal.*** packages are private and subject to change across every release
 * *Less is More. * Every class or interface added to the public API is increasing the complexity of the framework. That is why we strive very hard to keep the API as simple as possible. No classes or interfaces are added unless nessesary.
-
+* *API is forever. * Starting with a 1.0 release all public APIs myst be backwards compatible with previous version. Hence any public API added must be throughly designed and reviewed by other committers.
 
 ==== Tools
 Maven

@@ -27,7 +27,7 @@
   
   <groupId>net.maritimecloud.3rdparty</groupId>
   <artifactId>org.cakeframework.container</artifactId>
-  <version>0.8</version>
+  <version>0.8.2</version>
   <description>MaritimeCloud 3rd Party</description>
   
   <dependencies>
@@ -57,7 +57,7 @@
                 </execution>
             </executions>
         </plugin>
-    <!-- 
+    
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -70,12 +70,14 @@
             </goals>
             <configuration>
               <createSourcesJar>true</createSourcesJar>
+              <!-- 
               <relocations>
                 <relocation>
                   <pattern>com.cakeframework</pattern>
                   <shadedPattern>net.maritimecloud.internal.core.com.google.protobuf</shadedPattern>
                 </relocation>
               </relocations>
+              -->
               <filters>
                 <filter>
                   <artifact>*:*</artifact>
@@ -92,7 +94,7 @@
           </execution>
         </executions>
       </plugin>
-       -->
+   
     </plugins>
   </build>
   

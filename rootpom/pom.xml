@@ -24,15 +24,14 @@
     <version>7</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>net.maritimecloud</groupId>
-  <artifactId>mc-root-pom</artifactId>
+  <groupId>dma.dk</groupId>
+  <artifactId>root-pom</artifactId>
   
   <!-- Versions here is just a single incremental number no '.' -->
-  <version>8</version>
+  <version>1</version>
   <packaging>pom</packaging>
-  <name>MaritimeCloud Root Pom</name>
-  <description>The root pom for all maven projects under maritimecloud.net</description>
-  <url>https://github.com/MaritimeCloud</url>
+  <name>DMA Root Pom</name>
+  <description>The root pom for all maven projects under dma.dk</description>
   
   <licenses>
     <license>
@@ -54,19 +53,11 @@
     <url>https://dma.ci.cloudbees.com/</url>
   </ciManagement>
   
-  <mailingLists>
-    <mailingList>
-      <name>MaritimeCloud group</name>
-      <subscribe>http://groups.google.com/group/maritimecloud/subscribe</subscribe>
-      <archive>http://groups.google.com/group/maritimecloud</archive>
-    </mailingList>
-  </mailingLists>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <dependencies.guava.version>18.0</dependencies.guava.version>
-    <dependencies.slf4j.version>1.7.7</dependencies.slf4j.version>
-    <dependencies.jetty.version>9.2.5.v20141112</dependencies.jetty.version>
+    <dependencies.slf4j.version>1.7.12</dependencies.slf4j.version>
+    <dependencies.jetty.version>9.2.10.v20150310</dependencies.jetty.version>
     <dependencies.servlet.version>3.1.0</dependencies.servlet.version>
     <dependencies.jersey.version>2.13</dependencies.jersey.version>
   </properties>
@@ -80,7 +71,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
