@@ -4,6 +4,8 @@ target
 .classpath
 .project
 .DS_Store
+.idea
+*.iml
 dependency-reduced-pom.xml
 scripts/eclipse.tar.gz
 release/javadoc/
